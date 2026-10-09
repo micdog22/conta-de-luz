@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conta de Luz — descubra quanto cada aparelho pesa na sua conta</title>
+  <meta name="description" content="Calcule o consumo em kWh e o custo em reais de cada aparelho da casa, veja o ranking do que mais pesa na conta de luz e exporte em CSV.">
+  <meta name="theme-color" content="#92400e">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Conta de Luz</h1>
+    <p class="lead">Descubra quanto cada aparelho pesa na sua conta de energia, em kWh e em reais.</p>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="titulo-tarifa">
+      <h2 id="titulo-tarifa">Sua tarifa</h2>
+      <div class="grid">
+        <div>
+          <label for="tarifa">Tarifa (R$ por kWh)</label>
+          <input id="tarifa" inputmode="decimal" placeholder="ex.: 0,95" autocomplete="off" aria-describedby="dica-tarifa">
+          <p id="dica-tarifa" class="hint">Dica: divida o valor total da sua conta pelo consumo em kWh do mês para ter a tarifa efetiva com impostos.</p>
+        </div>
+        <div>
+          <label for="bandeira">Adicional da bandeira tarifária (R$ por 100 kWh)</label>
+          <input id="bandeira" inputmode="decimal" placeholder="0" autocomplete="off" aria-describedby="dica-bandeira">
+          <p id="dica-bandeira" class="hint">Opcional. O valor muda conforme a bandeira em vigor: confira na sua conta ou no site da distribuidora. Se a tarifa efetiva veio de uma conta que já tinha bandeira, deixe 0.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="titulo-aparelhos">
+      <h2 id="titulo-aparelhos">Aparelhos da casa</h2>
+      <div class="adicionar">
+        <div class="campo-preset">
+          <label for="preset">Aparelho comum</label>
+          <select id="preset"></select>
+        </div>
+        <button type="button" class="btn" id="add-preset">Adicionar</button>
+        <button type="button" class="btn secondary" id="add-blank">Outro aparelho</button>
+      </div>
+      <p class="hint">Os valores da lista são aproximados: confira a etiqueta do aparelho (potência em W) ou a etiqueta de eficiência do Inmetro/Procel (consumo em kWh/mês, no caso de geladeiras e freezers) e ajuste o tempo de uso ao seu dia a dia.</p>
+      <p class="hint">Tempo por dia em horas e minutos: <code>0:40</code> são 40 minutos; também vale <code>1h30</code>, <code>40min</code> ou <code>2</code> (horas). Para aparelhos usados em poucos dias, ajuste os dias por mês.</p>
+      <div id="lista" class="lista"></div>
+      <p class="acoes"><button type="button" class="btn secondary" id="limpar">Limpar lista</button></p>
+    </section>
+
+    <section class="card resultado" aria-labelledby="titulo-resultado">
+      <h2 id="titulo-resultado">O que mais pesa na conta</h2>
+      <div id="resultado" aria-live="polite"></div>
+      <p class="acoes"><button type="button" class="btn secondary" id="exportar">Exportar CSV</button></p>
+    </section>
+
+    <section class="card" aria-labelledby="titulo-dicas">
+      <h2 id="titulo-dicas">Dicas para economizar</h2>
+      <ul class="dicas">
+        <li><strong>Chuveiro elétrico:</strong> banhos mais curtos fazem muita diferença e, nos dias quentes, a posição verão usa menos potência.</li>
+        <li><strong>Geladeira e freezer:</strong> deixe espaço atrás para ventilar, confira se a borracha da porta veda bem, não guarde comida quente e evite abrir a porta à toa.</li>
+        <li><strong>Ar-condicionado:</strong> feche portas e janelas, limpe os filtros com frequência e evite temperaturas muito baixas.</li>
+        <li><strong>Roupas:</strong> junte o máximo possível para lavar, secar e passar de uma vez só.</li>
+        <li><strong>Iluminação:</strong> troque lâmpadas antigas por LED e apague a luz dos cômodos vazios.</li>
+        <li><strong>Na hora de comprar:</strong> compare o consumo em kWh/mês da etiqueta do Inmetro e prefira os aparelhos com selo Procel.</li>
+        <li><strong>Stand-by:</strong> cada aparelho gasta pouco, mas somam; tire da tomada o que fica muito tempo sem uso.</li>
+      </ul>
+      <p class="muted">Os cálculos são estimativas. A conta de verdade também pode ter outros itens, como a contribuição de iluminação pública.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Tudo roda no seu navegador. Código aberto no <a href="https://github.com/micdog22/conta-de-luz">GitHub</a> · Licença MIT</p>
+  </footer>
+</body>
+</html>

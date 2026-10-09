@@ -1,0 +1,11 @@
+{
+  "name": "conta-de-luz",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Descubra quanto cada aparelho pesa na sua conta de luz: kWh por mês, valor em reais, ranking e exportação CSV.",
+  "type": "module",
+  "scripts": { "test": "node --test" },
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/micdog22/conta-de-luz.git" },
+  "homepage": "https://micdog22.github.io/conta-de-luz/"
+}
