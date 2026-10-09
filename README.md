@@ -1,4 +1,4 @@
-# Conta de Luz — descubra quanto cada aparelho pesa na sua conta (HTML + JS)
+# Conta de Luz: descubra quanto cada aparelho pesa na sua conta (HTML + JS)
 
 Monte a lista de aparelhos da sua casa e veja quantos kWh cada um gasta por mês, quanto isso custa em reais e quais são os vilões da conta de luz. Tem uma lista de aparelhos comuns para começar rápido, dicas práticas de economia e exportação em CSV para abrir na planilha.
 
@@ -48,4 +48,4 @@ Os cálculos são estimativas: o consumo real depende do aparelho, do uso e da t
 Issues e pull requests são bem-vindos.
 
 ## Licença
-MIT — veja [LICENSE](LICENSE).
+MIT. Veja [LICENSE](LICENSE).

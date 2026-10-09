@@ -176,7 +176,7 @@ export function computeBill({ appliances, tariff, flag }) {
 
 export function formatNumber(value, decimals) {
   const [int, frac] = Math.abs(value).toFixed(decimals).split('.');
-  return `${value < 0 ? '−' : ''}${int.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}${frac ? `,${frac}` : ''}`;
+  return `${value < 0 ? '-' : ''}${int.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}${frac ? `,${frac}` : ''}`;
 }
 
 export function formatBRL(value) {
